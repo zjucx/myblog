@@ -1,28 +1,25 @@
 <template>
 <div class='navbar-zjucx'>
 <div class="dropdown">
-  <tooltip effect="scale" placement="right" content="zjucx"><button class="btn btn-default">飛</button></tooltip>
-  <tooltip effect="scale" placement="right" content="zjucx"><button class="btn btn-default">飛</button></tooltip>
-  <tooltip effect="scale" placement="right" content="zjucx"><button class="btn btn-default">飛</button></tooltip>
-  <tooltip effect="scale" placement="right" content="zjucx"><button class="btn btn-default">飛</button></tooltip>
-</div>
+  <a href="#"><i class="fa fa-home fa-lg"></i></a>
+  <a href="#"><i class="fa fa-th fa-fw fa-lg"></i></a>
+  <a href="#"><i class="fa fa-pencil fa-fw fa-lg"></i></a>
+  <a href="#"><i class="fa fa-search fa-fw fa-lg"></i></a>
+  <a href="#"><i class="fa fa-mobile fa-fw fa-lg"></i></a>
+  </div>
 <div class="nav-user">
-  <template>
-  <tooltip effect="scale" placement="right" content="zjucx"><button class="btn btn-default">飛</button></tooltip>
-  <tooltip effect="scale" placement="right" content="zjucx"><button class="btn btn-default">飛</button></tooltip>
-  <tooltip effect="scale" placement="right" content="zjucx"><button class="btn btn-default">飛</button></tooltip>
-  <tooltip effect="scale" placement="right" content="zjucx"><button class="btn btn-default">飛</button></tooltip>
+  <a href="#"><i class="fa fa-user fa-fw fa-lg"></i></a>
+  <a href="#"><i class="fa fa-users fa-fw fa-lg"></i></a>
+  <a href="#"><i class="fa fa-bell fa-fw fa-lg"></i></a>
+  <a href="#"><i class="fa fa-bookmark fa-fw fa-lg"></i></a>
+  <a href="#"><i class="fa fa-sign-out fa-fw fa-lg"></i></a>
 </div>
 </div>
 </template>
 
 <script>
-import { tooltip } from 'vue-strap'
 export default {
   name: 'navbar',
-  components: {
-    tooltip: tooltip
-  }
 }
 </script>
 
@@ -38,7 +35,15 @@ export default {
   height: 100%;
   background: #2a2a2a;
 }
+.navbar-zjucx a {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+}
 .dropdown {
+    /*padding-top: 20px;*/
     position: relative;
 }
 .nav-user {
