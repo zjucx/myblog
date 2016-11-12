@@ -1,6 +1,7 @@
 <template>
   <div id="app" class="grey lighten-3">
       <navbar></navbar>
+      <picbar></picbar>
       <mainContent></mainContent>
   </div>
 
@@ -9,11 +10,13 @@
 <script>
 import NavBar from './components/NavBar.vue'
 import MainContent from './components/MainContent.vue'
+import PicBar from './components/PicBar.vue'
 export default {
   name: 'app',
   components: {
     navbar: NavBar,
-    mainContent: MainContent
+    mainContent: MainContent,
+    picbar: PicBar
   }
 
 }

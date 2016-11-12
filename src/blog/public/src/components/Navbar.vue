@@ -20,6 +20,9 @@
 <script>
 export default {
   name: 'navbar',
+  mounted() {
+		// this.$el.querySelector('.tooltipped').tooltip({delay: 50});
+	}
 }
 </script>
 
