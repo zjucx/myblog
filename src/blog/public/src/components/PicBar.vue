@@ -57,7 +57,7 @@ export default {
 .col.s12 {
   height: auto;
   min-height: 1024px;
-  background-image: url('../assets/bg.jpg');
+  /*background-image: url('../assets/bg.jpg');*/
 }
 
 h1, h2 {

@@ -1,7 +1,7 @@
 <template>
 <div id='content-zjucx'>
   <!-- Page Layout here -->
-  <div class="row grey lighten-3">
+  <div class="content-zjucx row grey lighten-3">
   <div class="col s12" v-bind:style="style">
 
   <!-- Grey navigation panel -->
@@ -64,6 +64,7 @@ export default {
 		style() {
       console.log(this.paddingLeft)
       this.paddingLeft = (this.paddingLeft - 65 - 900)/2
+      this.paddingLeft = this.paddingLeft > 40 ? this.paddingLeft : 40
 			return {
         'padding-left': this.paddingLeft + 'px',
         'padding-right': this.paddingLeft + 'px',
@@ -78,10 +79,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.row {
+.content-zjucx.row {
     padding-top: 20px;
     margin-left: 250px;
-    margin-right: 10px;
 }
 
 .col.s3 {
