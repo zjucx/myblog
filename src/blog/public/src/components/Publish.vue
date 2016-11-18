@@ -10,7 +10,7 @@
 <script>
 import NavBar from './NavBar.vue'
 import MarkDown from './MarkDown.vue'
-import PicBar from './PicBar.vue'
+import PicBar from './ArticalList.vue'
 export default {
   name: 'publish',
   components: {
@@ -24,10 +24,6 @@ export default {
 
 <style>
 #publish {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   /*margin-top: 60px;*/
   padding-left: 45px;
