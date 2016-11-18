@@ -8,6 +8,8 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "cropper": "^2.3.4",
+    "jquery": "^3.1.1",
     "vue": "^2.0.1"
   },
   "devDependencies": {
