@@ -39,5 +39,6 @@ export default {
 
 #content-zjucx {
   margin-left: 250px;
+  height:100%;
 }
 </style>

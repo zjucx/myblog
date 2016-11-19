@@ -10,7 +10,8 @@
 <script>
 import NavBar from './NavBar.vue'
 import MarkDown from './MarkDown.vue'
-import PicBar from './ArticalList.vue'
+import PicBar from './PicBar.vue'
+// import PicBar from './ArticalList.vue'
 export default {
   name: 'publish',
   components: {
