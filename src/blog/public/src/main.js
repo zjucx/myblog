@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
+import VueResource from 'vue-resource'
+import ElementUI from 'element-ui'
 import Publish from './components/Publish.vue'
 
 // new Vue({
@@ -12,6 +14,10 @@ const routes = {
   '/': App,
   '/publish': Publish
 }
+
+Vue.use(VueResource)
+Vue.use(ElementUI)
+
 new Vue({
   el: '#app',
   data: {

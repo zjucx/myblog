@@ -1,9 +1,10 @@
 <template>
 <div class='navbar-zjucx'>
 <div class="dropdown">
-  <a href="#"><i class="fa fa-home fa-lg"></i></a>
+  <el-tooltip class="item" effect="dark" content="Home" placement="left">
+    <a href="/"><i class="fa fa-home fa-lg"></i></a></el-tooltip>
   <a href="#"><i class="fa fa-th fa-fw fa-lg"></i></a>
-  <a href="#"><i class="fa fa-pencil fa-fw fa-lg"></i></a>
+  <a href="/publish"><i class="fa fa-pencil fa-fw fa-lg"></i></a>
   <a href="#"><i class="fa fa-search fa-fw fa-lg"></i></a>
   <a href="#"><i class="fa fa-mobile fa-fw fa-lg"></i></a>
   </div>
@@ -37,6 +38,7 @@ export default {
   top: 0;
   height: 100%;
   background: #2a2a2a;
+  overflow-y: hidden;
 }
 .navbar-zjucx a {
     display: block;

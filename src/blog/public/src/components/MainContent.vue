@@ -79,6 +79,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#content-zjucx{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  left: 295;
+  top: 0;
+  height: 100%;
+}
 .content-zjucx.row {
     padding-top: 20px;
     margin-left: 250px;

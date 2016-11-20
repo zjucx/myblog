@@ -16,6 +16,9 @@
     <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
     <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
   </ul>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+  </button>
   </div>
 </div>
 </template>
@@ -49,9 +52,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.row {
-    width: 250px;
-    position: fixed;
+#picbar-zjucx {
+  position: fixed;
+  width: 250px;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  left: 45;
+  top: 0;
+  height: 100%;
 }
 
 .col.s12 {

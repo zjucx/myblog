@@ -1,7 +1,7 @@
 <template>
-  <div id="publish" class="grey lighten-3">
+  <div id="publish">
       <navbar></navbar>
-      <picbar></picbar>
+      <articalListBar></articalListBar>
       <markDown></markDown>
   </div>
 
@@ -10,14 +10,14 @@
 <script>
 import NavBar from './NavBar.vue'
 import MarkDown from './MarkDown.vue'
-import PicBar from './PicBar.vue'
+import ArticalListBar from './ArticalListBar.vue'
 // import PicBar from './ArticalList.vue'
 export default {
   name: 'publish',
   components: {
     navbar: NavBar,
     markDown: MarkDown,
-    picbar: PicBar
+    articalListBar: ArticalListBar
   }
 
 }
@@ -28,6 +28,7 @@ export default {
   color: #2c3e50;
   /*margin-top: 60px;*/
   padding-left: 45px;
+  /*overflow-y: hidden;*/
 }
 
 a {
