@@ -106,6 +106,7 @@ section.login {
         border: 0px;
         outline: none;
         border-bottom: 1px solid $green1;
+        background-color: #eeeeee;
         &:focus {
           width: 210px;
         }
