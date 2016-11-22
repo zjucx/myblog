@@ -1,6 +1,6 @@
 <template>
 <div id='markdown-zjucx'>
-  <el-input placeholder="Please input" v-model="input" style="text-align:center"> </el-input>
+  <el-input placeholder="Please input" v-model="input" style="text-align:center" > </el-input>
   <textarea id="editor">
   </textarea>
 </div>
@@ -114,9 +114,7 @@ export default {
 #markdown-zjucx {
   margin-left: 250px;
   /*height: 100%;*/
-  /*min-height: 630px;*/
-  overflow-y: inherit;
-  border: 1px solid #C0CCDA;
-  border-radius: 4px;
+  /*border: 1px solid #C0CCDA;*/
+  /*border-radius: 4px;*/
 }
 </style>
