@@ -5,7 +5,7 @@
 
     <el-row>
       <el-col :span="6"><div class="grid-content bg-purple"><a href="#"><img src="../assets/h1.png" alt="hehe"/></a></div></el-col>
-      <el-col :span="6"><div class="grid-content bg-purple-light"><p>hahahah</p></div></el-col>
+      <el-col :span="6"><div class="grid-content bg-purple-light"><p>haha\nhah</p></div></el-col>
       <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
       <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
     </el-row>

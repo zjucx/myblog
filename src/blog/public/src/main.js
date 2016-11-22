@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import ElementUI from 'element-ui'
 import Publish from './components/Publish.vue'
+import Login from './components/Login.vue'
 
 // new Vue({
 //   // router,
@@ -12,7 +13,8 @@ import Publish from './components/Publish.vue'
 
 const routes = {
   '/': App,
-  '/publish': Publish
+  '/publish': Publish,
+  '/login': Login
 }
 
 Vue.use(VueResource)
