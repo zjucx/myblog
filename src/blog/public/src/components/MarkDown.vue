@@ -1,36 +1,32 @@
 <template>
-<div id='markdown-zjucx'>
-  <el-input placeholder="Please input" v-model="input" style="text-align:center" > </el-input>
+<div id='markdown'>
+  <!-- <el-input placeholder="Please input" v-model="input"> </el-input> -->
+  <input id="artTitle"
+         type="text"
+         placeholder="Title"
+         v-model.trim="artTitle"
+  >
   <textarea id="editor">
   </textarea>
 </div>
 </template>
 
 <script>
-import ContentItem from './ContentItem.vue'
 import SimpleMDE from 'simplemde'
+let simplemde;
 export default {
-  name: 'mainContent',
+  name: 'markdown',
   data () {
     return {
-      paddingLeft: 0,
-      lastpaddingLeft: 0,
-      input: ''
+      artTitle: ''
     }
-  },
-  components: {
-    contentItem: ContentItem
   },
   mounted() {
 		this.$nextTick(function() {
-      /*var editor = document.getElementById('editor');
-      MarkdownIME.Enhance(editor);
-      console.log("markdown")
-      //optional: enable Tex Formula support
-      var math = new MarkdownIME.Addon.MathAddon();
-      MarkdownIME.Renderer.inlineRenderer.addRule(math);*/
-      var simplemde = new SimpleMDE({
+      simplemde = new SimpleMDE({
         element: document.getElementById("editor"),
+        autoDownloadFontAwesome: false,
+        tabSize: 4,
         toolbar: [
           {
             name: "bold",
@@ -94,15 +90,19 @@ export default {
             "|", // Separator
           {
             name: "submit",
-            action: function customFunction(editor){
-                // Add your own code
-            },
+            action: this.submit,
             className: "fa fa-paper-plane",
             title: "Submit",
           },
         ],
        });
 		})
+	},
+  methods: {
+		submit(event) {
+      console.log(this.artTitle)
+      console.log(simplemde.value())
+		}
 	}
 }
 </script>
@@ -111,10 +111,20 @@ export default {
 <style scoped>
 @import '../assets/css/simplemde.css';
 
-#markdown-zjucx {
+#markdown {
   margin-left: 250px;
-  /*height: 100%;*/
-  /*border: 1px solid #C0CCDA;*/
-  /*border-radius: 4px;*/
+}
+
+#artTitle {
+  transition: all 0.4s;
+  width: 100%;
+  font-size: 16px;
+  height:20px;
+  padding: 8px;
+  border: 0px;
+  text-align: center;
+  outline: none;
+  border-bottom: 1px solid $green1;
+  background-color: #eeeeee;
 }
 </style>

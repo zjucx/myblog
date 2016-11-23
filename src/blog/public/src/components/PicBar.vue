@@ -57,9 +57,10 @@ export default {
   width: 250px;
   z-index: 1;
   -webkit-backface-visibility: hidden;
-  left: 45;
+  left: 45px;
   top: 0;
   height: 100%;
+  text-align: center;
 }
 
 .col.s12 {

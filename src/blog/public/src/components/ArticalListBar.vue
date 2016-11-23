@@ -1,8 +1,8 @@
 <template>
 <div id='artical-listbar'>
   <!-- <el-col :span="8"> -->
-    <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
-      <el-submenu index="1">
+    <el-menu default-active="2" @open="handleOpen" @close="handleClose" style="background-color: #eeeeee;">
+      <el-submenu index="1" style="background-color: #eeeeee;">
         <template slot="title"><i class="el-icon-message"></i>Navigator One</template>
         <el-menu-item-group title="Group One">
           <el-menu-item index="1-1">item one</el-menu-item>
@@ -47,8 +47,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/*@import 'element-ui/lib/theme-default/index.css';*/
-/*@import '../assets/css/element.css';*/
 
 #artical-listbar {
   position: fixed;
@@ -59,6 +57,13 @@ export default {
   top: 0;
   overflow-y: hidden;
   height: 100%;
+  text-align: left;
   /*margin: 5px*/
+}
+.el-menu {
+  background-color: #eeeeee;
+}
+.el-submenu{
+    background-color: #eeeeee;
 }
 </style>

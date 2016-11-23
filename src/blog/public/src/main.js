@@ -1,34 +1,20 @@
 import Vue from 'vue'
-import App from './App.vue'
-import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import ElementUI from 'element-ui'
-import Publish from './components/Publish.vue'
-import Login from './components/Login.vue'
+import 'element-ui/lib/theme-default/index.css'
+import NavBar from './components/NavBar.vue'
 
-// new Vue({
-//   // router,
-//   render: h => h(App)
-// }).$mount('#app')
-
-const routes = {
-  '/': App,
-  '/publish': Publish,
-  '/login': Login
-}
+import router from './router'
 
 Vue.use(VueResource)
 Vue.use(ElementUI)
 
-new Vue({
-  el: '#app',
-  data: {
-    currentRoute: window.location.pathname
-  },
-  computed: {
-    ViewComponent () {
-      return routes[this.currentRoute] || NotFound
-    }
-  },
-  render (h) { return h(this.ViewComponent) }
-})
+// 记得要通过 router 配置参数注入路由，
+// 从而让整个应用都有路由功能
+const app = new Vue({
+  router,
+  components: {
+    navbar: NavBar,
+  }
+  // render: h => h(App)
+}).$mount('#app')

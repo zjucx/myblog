@@ -2,7 +2,7 @@
 
 <!-- Page Layout here -->
 <div class="content-zjucx">
-  <div v-bind:style="style">
+  <!-- <div v-bind:style="style"> -->
 
   <!-- Grey navigation panel -->
   <contentItem></contentItem>
@@ -26,7 +26,7 @@
     <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
     <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
   </ul>
-  </div>
+  <!-- </div> -->
 </div>
 </template>
 
@@ -80,10 +80,10 @@ export default {
 <style scoped>
 .content-zjucx{
   position: fixed;
-  width: 100%;
+  width: auto;
   z-index: 1;
   -webkit-backface-visibility: hidden;
-  left: 295;
+  left: 295px;
   top: 0;
   height: 100%;
 }
@@ -92,15 +92,6 @@ export default {
     margin-left: 250px;
 }
 
-.col.s3 {
-  height: auto;
-  min-height: 1024px;
-  background-image: url('../assets/bg.jpg');
-}
-.clear{
-  clear: both;
-  height: 0px;
-}
 h1, h2 {
   font-weight: normal;
 }
