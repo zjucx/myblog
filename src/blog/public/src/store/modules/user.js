@@ -1,6 +1,6 @@
 // vuex/modules/user.js
 import * as types from '../mutation-types'
-import User from '../models/user'
+// import User from '../models/user'
 
 // 该模块的初始状态
 const state = {

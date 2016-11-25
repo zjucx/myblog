@@ -113,6 +113,7 @@ export default {
 
 #markdown {
   margin-left: 250px;
+  padding-right: 10px;
 }
 
 #artTitle {
