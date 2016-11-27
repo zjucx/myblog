@@ -40,6 +40,7 @@ export default {
   height: 100%;
   background: #2a2a2a;
   overflow-y: hidden;
+  text-align: center;
 }
 .navbar-zjucx a {
     display: block;
