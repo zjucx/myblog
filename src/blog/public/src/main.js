@@ -5,6 +5,7 @@ import 'element-ui/lib/theme-default/index.css'
 import NavBar from './components/NavBar.vue'
 
 import router from './router'
+import store from './store'
 
 Vue.use(VueResource)
 Vue.use(ElementUI)
@@ -13,6 +14,7 @@ Vue.use(ElementUI)
 // 从而让整个应用都有路由功能
 const app = new Vue({
   router,
+  store,
   components: {
     navbar: NavBar,
   }

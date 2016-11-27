@@ -13,6 +13,7 @@
 
 <script>
 import SimpleMDE from 'simplemde'
+import {mapState, mapActions, mapMutations} from 'vuex'
 let simplemde;
 export default {
   name: 'markdown',
@@ -96,13 +97,17 @@ export default {
           },
         ],
        });
+       simplemde.codemirror.on("change", this.autoSave);
 		})
 	},
   methods: {
 		submit(event) {
       console.log(this.artTitle)
-      console.log(simplemde.value())
-		}
+      this.$store.dispatch('saveArticle')
+		},
+    autoSave() {
+      this.$store.dispatch('autoSave', simplemde.value())
+    }
 	}
 }
 </script>
