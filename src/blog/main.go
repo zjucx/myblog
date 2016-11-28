@@ -7,5 +7,7 @@ import (
 
 func main() {
 	beego.SetStaticPath("/public", "public")
+	beego.SetStaticPath("/dist", "views/dist")
+	// beego.ViewsPath = "public"
 	beego.Run()
 }
