@@ -15,7 +15,7 @@ const getters = {
 
 const actions =  {
   getArticles: (commit) => {
-    return Vue.http.get('/api/getArticles')
+    return Vue.http.get('/article/getArticles')
       .then(response=> response.json())
       .then(articles=> {
         // stopLoading(commit, start)
@@ -23,14 +23,14 @@ const actions =  {
       })
   },
   getArticle: (commit, id) => {
-    return Vue.http.get('/api/getArticles', {param: {id}})
+    return Vue.http.get('/article/getArticles', {param: {id}})
       .then(response=> {
         // stopLoading(commit, start)
         commit('SET_ARTICLE', response.data)
       })
   },
   saveArticle: ({state, commit}) => {
-    return Vue.http.post('/api/saveArticle', state.article)
+    return Vue.http.post('/article/saveArticle', state)
       .then(
         ()=>doToast(state, commit, {info: '保存成功,是否返回?', btnNum: 2}),
         ()=>doToast(state, commit, {info: '保存失败', btnNum: 1})
