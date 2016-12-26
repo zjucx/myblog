@@ -12,6 +12,7 @@ type struct Article {
 	Title          string
 	Text           string
 	Tags           []string
+  Category       string
 	FeaturedPicURL string
 	Summary        string
 	Views          int
@@ -20,13 +21,18 @@ type struct Article {
 	ModifiedTime   time.Time
 }
 
+func (a *Article) CreateArticle() err {
+  article.Id_ = bson.NewObjectId()
+  c := DB.C("article")
+  err := c.Insert(a)
+  return err
+}
+
 type Comment struct {
 	Name        string
 	Author      string
 	ArticleName string
-	// IP          string
 	Email       string
-	// EmailHash   string
 	CreatedTime int64
   Text        string
 }

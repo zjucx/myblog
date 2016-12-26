@@ -1,17 +1,17 @@
 <template>
 
 <!-- Page Layout here -->
-<div class="content-zjucx">
-  <!-- <div v-bind:style="style"> -->
+  <div class="content-zjucx">
+  <div v-bind:style="style">
 
   <!-- Grey navigation panel -->
   <contentItem></contentItem>
   <contentItem></contentItem>
+  </div>
 
   <!-- Teal page content -->
   <img src="../assets/logo.png">
   <h1>{{ paddingLeft }}</h1>
-  <h1>{{ lastpaddingLeft }}</h1>
   <h2>Essential Links</h2>
   <ul>
     <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -37,7 +37,6 @@ export default {
   data () {
     return {
       paddingLeft: 0,
-      lastpaddingLeft: 0
     }
   },
   components: {
@@ -56,17 +55,15 @@ export default {
 
         //this.paddingLeft = this.$el.querySelector('.row').style.width;
 				this.paddingLeft = document.documentElement.clientWidth;
-        this.lastpaddingLeft = this.paddingLeft
 		}
 	},
   computed: {
 		style() {
       console.log(this.paddingLeft)
-      this.paddingLeft = (this.paddingLeft - 65 - 900)/2
-      this.paddingLeft = this.paddingLeft > 40 ? this.paddingLeft : 40
+      this.paddingLeft = this.paddingLeft - 295
+      console.log(this.paddingLeft)
 			return {
-        'padding-left': '250px',
-        'padding-right': this.paddingLeft + 'px',
+        'width': this.paddingLeft + 'px',
       }
     }
 	},
@@ -86,6 +83,7 @@ export default {
   left: 295px;
   top: 0;
   height: 100%;
+  overflow-y: auto;
 }
 .content-zjucx.row {
     padding-top: 20px;
