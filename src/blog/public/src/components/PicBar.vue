@@ -54,7 +54,7 @@ export default {
 <style scoped>
 #picbar-zjucx {
   position: fixed;
-  width: 250px;
+  width: 300px;
   z-index: 1;
   -webkit-backface-visibility: hidden;
   left: 45px;

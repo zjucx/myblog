@@ -60,7 +60,7 @@ export default {
   computed: {
 		style() {
       console.log(this.paddingLeft)
-      this.paddingLeft = this.paddingLeft - 295
+      this.paddingLeft = this.paddingLeft - 345
       console.log(this.paddingLeft)
 			return {
         'width': this.paddingLeft + 'px',
@@ -80,7 +80,7 @@ export default {
   width: auto;
   z-index: 1;
   -webkit-backface-visibility: hidden;
-  left: 295px;
+  left: 345px;
   top: 0;
   height: 100%;
   overflow-y: auto;
