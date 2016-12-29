@@ -1,5 +1,5 @@
 <template>
-<div class='item-zjucx'>
+<div class='article-cx'>
   <!-- Page Layout here -->
   <div class="sLDTkb" >Trending on Google+</div>
   <!-- <el-row>
@@ -27,7 +27,7 @@
           <img src="../assets/logo.png" class="image">
         </div>
         <!-- </center> -->
-        <div style="padding: 14px;">
+        <div>
           <span>Yummy hamburger jjjjjjjjjjjj  aofeijf   afjejfe af wea f aeiwo jioaiegegeegawgawga  aewfawfawehfiaeofewfwe</span>
           <div class="bottom clearfix">
             <el-row :gutter="20">
@@ -66,7 +66,7 @@
 
 <script>
 export default {
-  name: 'contentItem',
+  name: 'Articles',
   data () {
     return {
       currentDate: new Date(),
@@ -79,7 +79,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.item-zjucx{
+.article-cx{
   /*margin: 0 auto;*/
   /*text-align: left;*/
   width: 90%;

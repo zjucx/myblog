@@ -1,7 +1,7 @@
 <template>
   <div id="publish">
       <!-- <navbar></navbar> -->
-      <articalListBar></articalListBar>
+      <articleList></ArticleList>
       <markDown></markDown>
   </div>
 
@@ -10,14 +10,14 @@
 <script>
 // import NavBar from './NavBar.vue'
 import MarkDown from './MarkDown.vue'
-import ArticalListBar from './ArticalListBar.vue'
-// import PicBar from './ArticalList.vue'
+import ArticleList from './ArticleList.vue'
+// import PicBar from './articleList.vue'
 export default {
-  name: 'publish',
+  name: 'editPage',
   components: {
     // navbar: NavBar,
     markDown: MarkDown,
-    articalListBar: ArticalListBar
+    articleList: ArticleList
   }
 
 }

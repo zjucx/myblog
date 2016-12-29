@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import Publish from '../components/Publish.vue'
+import EditPage from '../components/EditPage.vue'
 import Login from '../components/Login.vue'
 import App from '../App.vue'
 
@@ -30,7 +30,7 @@ export default new Router({
   // mode: 'history',
   routes: [
     {path: '/', component: App},
-    {path: '/publish', component: Publish},
+    {path: '/edit', component: EditPage},
     {path: '/login', component: Login},
     {
       path: '/console',

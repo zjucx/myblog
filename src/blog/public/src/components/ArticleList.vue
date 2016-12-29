@@ -1,5 +1,5 @@
 <template>
-<div id='artical-listbar'>
+<div id='article-list'>
   <!-- <el-col :span="8"> -->
     <el-menu default-active="2" @open="handleOpen" @close="handleClose" style="background-color: #eeeeee;">
       <el-submenu index="1" style="background-color: #eeeeee;">
@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: 'articalListBar',
+  name: 'articleList',
   data () {
     return {
       paddingLeft: 0,
@@ -48,7 +48,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-#artical-listbar {
+#article-list {
   position: fixed;
   width: 250px;
   z-index: 1;

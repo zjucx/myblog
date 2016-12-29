@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="grey lighten-3">
       <!-- <navbar></navbar> -->
-      <picbar></picbar>
-      <mainContent></mainContent>
+      <tagsList></tagsList>
+      <mainPage></mainPage>
       <!-- <router-view></router-view> -->
   </div>
 
@@ -10,14 +10,14 @@
 
 <script>
 // import NavBar from './components/NavBar.vue'
-import MainContent from './components/MainContent.vue'
-import PicBar from './components/PicBar.vue'
+import MainPage from './components/MainPage.vue'
+import TagsList from './components/TagsList.vue'
 export default {
   name: 'app',
   components: {
     // navbar: NavBar,
-    mainContent: MainContent,
-    picbar: PicBar
+    mainPage: MainPage,
+    tagsList: TagsList,
   }
 
 }

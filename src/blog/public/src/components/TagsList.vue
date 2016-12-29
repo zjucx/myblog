@@ -1,5 +1,5 @@
 <template>
-<div id='picbar-zjucx' class="row grey lighten-3 z-depth-5">
+<div id='tagslist' class="row grey lighten-3 z-depth-5">
   <div class="col s12">
   <img src="../assets/logo.png">
   <P>Essential Links</P>
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'picBar',
+  name: 'tagsList',
   data () {
     return {
       paddingLeft: 0,
@@ -52,7 +52,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#picbar-zjucx {
+#tagslist {
   position: fixed;
   width: 300px;
   z-index: 1;

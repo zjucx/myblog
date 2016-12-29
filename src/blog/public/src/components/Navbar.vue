@@ -8,7 +8,7 @@
   <a href="/#/login"><i class="fa fa-th fa-fw fa-lg"></i></a>
   </el-tooltip>
   <el-tooltip class="item" effect="dark" content="Publish" placement="left">
-  <a href="/#/publish"><i class="fa fa-pencil fa-fw fa-lg"></i></a>
+  <a href="/#/edit"><i class="fa fa-pencil fa-fw fa-lg"></i></a>
   </el-tooltip>
   <a href="#"><i class="fa fa-search fa-fw fa-lg"></i></a>
   <a href="#"><i class="fa fa-mobile fa-fw fa-lg"></i></a>

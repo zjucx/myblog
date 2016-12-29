@@ -1,12 +1,14 @@
 <template>
 
 <!-- Page Layout here -->
-  <div class="content-zjucx">
+  <div class="mainpage">
   <div v-bind:style="style">
 
   <!-- Grey navigation panel -->
-  <contentItem></contentItem>
-  <contentItem></contentItem>
+  <div v-for="(o, index) in 2">
+    <articles></articles>
+    <articles></articles>
+  </div>
   </div>
 
   <!-- Teal page content -->
@@ -31,16 +33,16 @@
 </template>
 
 <script>
-import ContentItem from './ContentItem.vue'
+import Articles from './Articles.vue'
 export default {
-  name: 'mainContent',
+  name: 'mainPage',
   data () {
     return {
       paddingLeft: 0,
     }
   },
   components: {
-    contentItem: ContentItem
+    articles: Articles
   },
   mounted() {
 		this.$nextTick(function() {
@@ -75,7 +77,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.content-zjucx{
+.mainpage{
   position: fixed;
   width: auto;
   z-index: 1;
@@ -85,7 +87,7 @@ export default {
   height: 100%;
   overflow-y: auto;
 }
-.content-zjucx.row {
+.mainpage.row {
     padding-top: 20px;
     margin-left: 250px;
 }
