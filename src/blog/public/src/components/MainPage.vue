@@ -1,7 +1,7 @@
 <template>
 
 <!-- Page Layout here -->
-  <div class="mainpage">
+<div class="mainpage">
   <div v-bind:style="style">
 
   <!-- Grey navigation panel -->
@@ -10,25 +10,6 @@
     <articles></articles>
   </div>
   </div>
-
-  <!-- Teal page content -->
-  <img src="../assets/logo.png">
-  <h1>{{ paddingLeft }}</h1>
-  <h2>Essential Links</h2>
-  <ul>
-    <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-    <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-    <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-    <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-  </ul>
-  <h2>Ecosystem</h2>
-  <ul>
-    <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-    <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-    <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-    <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-  </ul>
-  <!-- </div> -->
 </div>
 </template>
 
@@ -38,34 +19,34 @@ export default {
   name: 'mainPage',
   data () {
     return {
-      paddingLeft: 0,
+      style: {
+        width: 0
+      },
+      width: 0
     }
   },
   components: {
     articles: Articles
   },
   mounted() {
-		this.$nextTick(function() {
+		// this.$nextTick(function() {
 				window.addEventListener('resize', this.getWindowWidth);
         this.getWindowWidth()
-
-		})
+		// })
 	},
   methods: {
 		getWindowWidth(event) {
 				console.log(document.documentElement.clientWidth)
-
-        //this.paddingLeft = this.$el.querySelector('.row').style.width;
-				this.paddingLeft = document.documentElement.clientWidth;
+				this.width = document.documentElement.clientWidth;
 		}
 	},
   computed: {
 		style() {
-      console.log(this.paddingLeft)
-      this.paddingLeft = this.paddingLeft - 345
-      console.log(this.paddingLeft)
+      console.log(this.width)
+      this.width = this.width - 345
+      console.log(this.width)
 			return {
-        'width': this.paddingLeft + 'px',
+        'width': this.width + 'px',
       }
     }
 	},
@@ -90,23 +71,5 @@ export default {
 .mainpage.row {
     padding-top: 20px;
     margin-left: 250px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
 }
 </style>

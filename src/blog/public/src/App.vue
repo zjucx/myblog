@@ -1,7 +1,10 @@
 <template>
   <div id="app" class="grey lighten-3">
       <!-- <navbar></navbar> -->
-      <tagsList></tagsList>
+      <!-- <tagsList></tagsList> -->
+      <keep-alive>
+        <component :is="tagsList"></component>
+      </keep-alive>
       <mainPage></mainPage>
       <!-- <router-view></router-view> -->
   </div>
@@ -13,7 +16,12 @@
 import MainPage from './components/MainPage.vue'
 import TagsList from './components/TagsList.vue'
 export default {
-  name: 'app',
+  data () {
+    return {
+      tagsList: 'tagsList'
+    }
+  },
+  // name: 'app',
   components: {
     // navbar: NavBar,
     mainPage: MainPage,

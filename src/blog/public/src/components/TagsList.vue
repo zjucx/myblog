@@ -1,29 +1,37 @@
 <template>
-<div id='tagslist' class="row grey lighten-3 z-depth-5">
-  <div class="col s12">
-  <img src="../assets/logo.png">
-  <P>Essential Links</P>
-  <ul>
-    <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-    <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-    <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-    <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-  </ul>
-  <p>Ecosystem</p>
-  <ul>
-    <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-    <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-    <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-    <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-  </ul>
-  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="fa fa-paper-plane" aria-hidden="true"></i>
-  </button>
+<div class="tagslist row grey lighten-3 z-depth-5">
+  <div class="powerby" >Tags Cloud :</div>
+  <div id="tagsclound">
+    <a href="http://www.lanrentuku.com" target="_blank">node</a>
+    <a href="http://www.lanrentuku.com" target="_blank">golang</a>
+    <a href="http://www.lanrentuku.com" target="_blank">c++</a>
+    <a href="http://www.lanrentuku.com" target="_blank">python</a>
+    <a href="http://www.lanrentuku.com" target="_blank">github</a>
+    <a href="http://www.lanrentuku.com" target="_blank">docker</a>
+    <a href="http://www.lanrentuku.com" target="_blank">java</a>
+    <a href="http://www.lanrentuku.com" target="_blank">php</a>
+    <a href="http://www.lanrentuku.com" target="_blank">althorigm</a>
+    <a href="http://www.lanrentuku.com" target="_blank">cloudfoundry</a>
+    <a href="http://www.lanrentuku.com" target="_blank">android</a>
+    <a href="http://www.lanrentuku.com" target="_blank">ios</a>
+    <a href="http://www.lanrentuku.com" target="_blank">memory</a>
+    <a href="http://www.lanrentuku.com" target="_blank">mongodb</a>
+    <a href="http://www.lanrentuku.com" target="_blank">vuejs</a>
+    <a href="http://www.lanrentuku.com" target="_blank">webpack</a>
+    <a href="http://www.lanrentuku.com" target="_blank">sass</a>
+    <a href="http://www.lanrentuku.com" target="_blank">react</a>
+    <a href="http://www.lanrentuku.com" target="_blank">jquery</a>
+    <a href="http://www.lanrentuku.com" target="_blank">javascript</a>
+    <a href="http://www.lanrentuku.com" target="_blank">dota</a>
+    <a href="http://www.lanrentuku.com" target="_blank">dockerfile</a>
+    <a href="http://www.lanrentuku.com" target="_blank">design</a>
   </div>
 </div>
 </template>
 
 <script>
+import {tagscloud} from '../assets/js/tagscloud'
+
 export default {
   name: 'tagsList',
   data () {
@@ -33,26 +41,25 @@ export default {
   },
   mounted() {
 		this.$nextTick(function() {
-				window.addEventListener('resize', this.getWindowWidth);
-        this.getWindowWidth()
-
+        this.tagscloud()
 		})
 	},
+  // updated() {
+		// this.$nextTick(function() {
+        // this.tagscloud()
+		// })
+	// },
   methods: {
-		getWindowWidth(event) {
-				console.log(document.documentElement.clientWidth)
-
-        //this.paddingLeft = this.$el.querySelector('.row').style.width;
-				this.paddingLeft = document.documentElement.clientWidth;
-        this.lastpaddingLeft = this.paddingLeft
+		tagscloud(event) {
+				tagscloud()
 		}
-	}
+	},
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-#tagslist {
+<style lang="sass" rel="stylesheet/scss">
+.tagslist {
   position: fixed;
   width: 300px;
   z-index: 1;
@@ -60,30 +67,41 @@ export default {
   left: 45px;
   top: 0;
   height: 100%;
-  text-align: center;
-}
+  // text-align: center;
+  #tagsclound {
+    height:300px;
+    width:300px;
+    position:relative;
+    // margin:10px auto;
+    a {
+      position:absolute;
+      top:0px;
+      left:0px;
+      // color:#fff;
+      background:#eee;
+      border-radius:5px;
+      font-size: 12px;
+      // font-weight:bold;
+      padding:2px 4px;
 
-.col.s12 {
-  height: auto;
-  min-height: 1024px;
-  /*background-image: url('../assets/bg.jpg');*/
+      &:hover {
+        border:1px solid #fff;
+        background:#fff;
+        border-radius:5px;
+      }
+    }
+  }
+  .powerby {
+      color: #616161;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      padding: 14px 16px 6px;
+      text-align: left;
+  }
 }
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
+//
+// a {
+//   color: #42b983;
+// }
 </style>

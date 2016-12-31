@@ -1,6 +1,8 @@
 <template>
 <div id='markdown'>
   <!-- <el-input placeholder="Please input" v-model="input"> </el-input> -->
+  <div v-html="artTitle">
+  </div>
   <input id="artTitle"
          type="text"
          placeholder="Title"
@@ -13,6 +15,8 @@
 
 <script>
 import SimpleMDE from 'simplemde'
+import marked from 'marked'
+import highlight from 'highlight.js/lib/highlight'
 import {mapState, mapActions, mapMutations} from 'vuex'
 let simplemde;
 export default {
@@ -98,6 +102,11 @@ export default {
         ],
        });
        simplemde.codemirror.on("change", this.autoSave);
+       marked.setOptions({
+         highlight: function (code) {
+           return highlight.highlightAuto(code).value;
+         }
+       });
 		})
 	},
   methods: {
@@ -107,6 +116,8 @@ export default {
 		},
     autoSave() {
       this.$store.dispatch('autoSave', simplemde.value())
+      // this.artTitle = marked(simplemde.value())
+      console.log(marked(simplemde.value()))
     }
 	}
 }

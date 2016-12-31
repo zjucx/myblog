@@ -1,11 +1,11 @@
 <template>
 <div class='article-cx'>
   <!-- Page Layout here -->
-  <div class="sLDTkb" >Trending on Google+</div>
+  <div class="powerby" >Trending on Google+</div>
   <!-- <el-row>
     <el-col> -->
       <!-- <el-card :body-style="{ padding: '14px' }"> -->
-      <div style="padding:14px; border-bottom:solid 2px #fff;">
+      <div style="padding:14px;">
         <div class="header">
           <el-row :gutter="20">
             <el-col :span="3">
@@ -13,12 +13,6 @@
                 <img class="cx-header" src="../assets/logo.png">
               <!-- </div> -->
               <div style="padding-left:50px; padding-top:8px;font-size:16px;">zjucx</div>
-            </el-col>
-
-            <el-col :span="3" :offset="8">
-              <div class="cx-circle">
-                <i class="fa fa-share-alt fa-lg cx-fa" aria-hidden="true"></i>
-              </div>
             </el-col>
           </el-row>
         </div>
@@ -31,27 +25,32 @@
           <span>Yummy hamburger jjjjjjjjjjjj  aofeijf   afjejfe af wea f aeiwo jioaiegegeegawgawga  aewfawfawehfiaeofewfwe</span>
           <div class="bottom clearfix">
             <el-row :gutter="20">
-              <el-col :span="3">
+              <el-col :span="2">
                 <div class="cx-circle">
-                  <i class="fa fa-thumbs-up fa-lg cx-fa" aria-hidden="true"></i>
+                  <i class="fa fa-share-alt cx-fa" aria-hidden="true"></i>
                 </div>
-                <div style="padding-left:50px; padding-top:13px">32</div>
               </el-col>
 
-              <el-col :span="8">
+              <el-col :span="2" :offset="2">
+                <div class="cx-circle">
+                  <i class="fa fa-comments cx-fa" aria-hidden="true"></i>
+                </div>
+                <div style="padding-left:40px; padding-top:8px;font-size: 12px;">32</div>
+              </el-col>
+              <el-col :span="2">
+                <div class="cx-circle">
+                  <i class="fa fa-thumbs-up cx-fa" aria-hidden="true"></i>
+                </div>
+                <div style="padding-left:40px; padding-top:8px;font-size: 12px;">32</div>
+              </el-col>
+              <el-col :span="14" :offset="1">
                 <!-- <time class="time">{{ currentDate }}</time> -->
                 <div>
-                <i class="fa fa-tags fa-lg cx-fa" aria-hidden="true">:</i>
+                <i class="fa fa-tags cx-fa" aria-hidden="true">:</i>
                 <el-tag>Tag One</el-tag>
                 <el-tag type="gray">Tag Two</el-tag>
                 <el-tag type="primary">Tag Three</el-tag>
                 <div>
-              </el-col>
-              <el-col :span="3">
-                <div class="cx-circle">
-                  <i class="fa fa-comments fa-lg cx-fa" aria-hidden="true"></i>
-                </div>
-                <div style="padding-left:50px; padding-top:13px">32</div>
               </el-col>
             </el-row>
           </div>
@@ -84,9 +83,10 @@ export default {
   /*text-align: left;*/
   width: 90%;
   /*text-align: center;*/
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
 }
-.sLDTkb {
+.powerby {
     color: #616161;
     font-size: 12px;
     font-weight: 400;
@@ -145,8 +145,8 @@ export default {
   .cx-circle {
     background: #fff;
     display: block;
-    height: 36px;
-    width: 36px;
+    height: 24px;
+    width: 24px;
     border-radius:50%;
     position: absolute;;
     /*padding: auto auto;*/
@@ -159,8 +159,8 @@ export default {
   }
 
   .cx-fa {
-    padding-top: 11px;
-    padding-left: 9px;
+    padding-top: 4px;
+    padding-left: 4px;
   }
 
 </style>
