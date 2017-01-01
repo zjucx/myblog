@@ -11,7 +11,7 @@ var DB *mgo.Database
 func InitDB(dbName, connStr string) *mgo.Session {
   session, err := mgo.Dial(connStr)
   if err != nil {
-          panic(err)
+    panic(err)
   }
   //defer session.Close()
 

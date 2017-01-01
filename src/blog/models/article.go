@@ -1,66 +1,93 @@
 package models
 
 import (
-  // "strings"
+  "strings"
+  "fmt"
   "time"
 	"gopkg.in/mgo.v2/bson"
 )
 
-type Article struct{
-  Id_            bson.ObjectId `bson:"_id"`
-	Author         string
-	Title          string
-	Text           string
-	Tags           []string
-  Category       string
-	FeaturedPicURL string
-	Summary        string
-	Views          int
-	Comments       []*Comment
-	CreatedTime    string
-	ModifiedTime   string
+type Article struct {
+  Id             bson.ObjectId `bson:"_id"`
+	Author         string        `json:"author"`
+	Title          string        `json:"title"`
+	Text           string        `json:"article"`
+	Tags           []string      `json:"tags"`
+  // Category       string     `json:"id_sensor"`
+	// FeaturedPicURL string     `json:"id_sensor"`
+	Comments       []*Comment    `json:"comments"`
+  Summary        string        `json:"summary"`
+  Likes          int           `json:"likes"`
+  CComments      int           `json:"ccomments"`
+	CreatedTime    string        `json:"createdtime"`
+	ModifiedTime   string        `json:"modifiedtime"`
 }
 
-func (article *Article) CreateArticle() error {
-  timestamp := time.Now().Unix()
+type SArticle struct {
+  Id             bson.ObjectId `bson:"_id"`
+	Author         string        `json:"author"`
+	Title          string        `json:"title"`
+  Tags           []string      `json:"tags"`
+  Likes          int           `json:"likes"`
+  CComments      int           `json:"ccomments"`
+  Summary        string        `json:"summary"`
+	CreatedTime    string        `json:"createdtime"`
+}
 
-  article.Id_ = bson.NewObjectId()
+func InsertArticle(article *Article) (string, error) {
+  timestamp := time.Now().Unix()
+  article.Id = bson.NewObjectId()
   article.CreatedTime = time.Unix(timestamp, 0).Format("2006-01-02 03:04:05 PM")
+  article.Summary = generateSum(article.Text)
+  if article.Text == "" || article.Title == "" {
+    return "", nil
+  }
   c := DB.C("article")
-  return c.Insert(article)
+  return article.Id.String(), c.Insert(article)
   // return err
 }
 
-type Comment struct {
-	Name        string
-	Author      string
-	ArticleName string
-	Email       string
-	CreatedTime int64
-  Text        string
+func QueryArticles(topN int) (error, *[]SArticle){
+  //*****查询多条数据*******
+  articles := new([]SArticle)   //存放结果
+  c := DB.C("article")
+  iter := c.Find(nil).Limit(topN).Iter()
+  err := iter.All(&articles)
+  if err != nil {
+      return err, nil
+  }
+  return nil, articles
 }
 
-// type Category struct {
-// 	Id_         bson.ObjectId `bson:"_id"`
-// 	Name        string
-// 	Title       string
-// 	Content     string
-// 	CreatedTime time.Time
-// 	UpdatedTime time.Time
-// 	Views       int
-// }
-//
-// func (category *Category) CreatCategory() error {
-// 	//category.Id_ = bson.NewObjectId()
-// 	c := DB.C("category")
-// 	err := c.Insert(category)
-// 	SetAppCategories()
-// 	return err
-// }
-//
-// func (category *Category) UpdateCategory() error {
-// 	c := DB.C("category")
-// 	err := c.UpdateId(category.Id_, category)
-// 	SetAppCategories()
-// 	return err
-// }
+func QueryArticleById(id string) (error, *Article){
+  // id := "5204af979955496907000001"
+  objectId := bson.ObjectIdHex(id)
+  article := new(Article)
+  c := DB.C("article")
+  err := c.Find(bson.M{"_id": objectId}).One(&article)
+  fmt.Println(article)
+  if err != nil {
+      return err, nil
+  }
+  return nil, article
+}
+
+func QueryArticleByTag(tag string) (error, *[]SArticle){
+  // id := "5204af979955496907000001"
+  // objectId := bson.ObjectIdHex(id)
+  //*****查询多条数据*******
+  articles := new([]SArticle)  //存放结果
+  c := DB.C("article")
+  iter := c.Find(bson.M{"tags": tag}).Iter()
+  err := iter.All(&articles)
+  if err != nil {
+      return err, nil
+  }
+  return nil, articles
+}
+
+func generateSum(article string) string {
+  str := strings.Split(article, "<----summary---->")
+  fmt.Println(str[0])
+  return str[0]
+}

@@ -10,10 +10,10 @@ func main() {
 	beego.SetStaticPath("/public", "public")
 	beego.SetStaticPath("/dist", "views/dist")
 
-	connStr, _ := beego.AppConfig.Int("mgoconnstr")
-	dbName, _ := beego.AppConfig.Int("dbname")
+	connStr := beego.AppConfig.String("mgoconnstr")
+	dbName := beego.AppConfig.String("dbname")
 
-	session := InitDB(mgoconnstr, dbname)
+	session := models.InitDB(connStr, dbName)
 	defer session.Close()
 	// beego.ViewsPath = "public"
 	beego.Run()

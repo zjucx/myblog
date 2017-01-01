@@ -8,7 +8,7 @@ const state = {
   tags: [],
   // time: '',
   comments: [],
-  writer: ''
+  author: ''
 }
 
 // getters
