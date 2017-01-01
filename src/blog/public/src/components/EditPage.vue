@@ -1,7 +1,7 @@
 <template>
   <div id="publish">
       <!-- <navbar></navbar> -->
-      <articleList></ArticleList>
+      <!-- <articleList></ArticleList> -->
       <markDown></markDown>
   </div>
 
@@ -29,9 +29,5 @@ export default {
   /*margin-top: 60px;*/
   /*padding-left: 45px;*/
   /*overflow-y: hidden;*/
-}
-
-a {
-  color: #42b983;
 }
 </style>

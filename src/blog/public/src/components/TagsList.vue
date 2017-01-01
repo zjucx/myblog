@@ -2,8 +2,8 @@
 <div class="tagslist row grey lighten-3 z-depth-5">
   <div class="powerby" >Tags Cloud :</div>
   <div id="tagsclound">
-    <a href="http://www.lanrentuku.com" target="_blank">node</a>
-    <a href="http://www.lanrentuku.com" target="_blank">golang</a>
+    <a v-for="item of items" :href="item.href" target="_blank">{{ item.tag }}</a>
+    <!-- <a href="http://www.lanrentuku.com" target="_blank">golang</a>
     <a href="http://www.lanrentuku.com" target="_blank">c++</a>
     <a href="http://www.lanrentuku.com" target="_blank">python</a>
     <a href="http://www.lanrentuku.com" target="_blank">github</a>
@@ -24,7 +24,7 @@
     <a href="http://www.lanrentuku.com" target="_blank">javascript</a>
     <a href="http://www.lanrentuku.com" target="_blank">dota</a>
     <a href="http://www.lanrentuku.com" target="_blank">dockerfile</a>
-    <a href="http://www.lanrentuku.com" target="_blank">design</a>
+    <a href="http://www.lanrentuku.com" target="_blank">design</a> -->
   </div>
 </div>
 </template>
@@ -36,19 +36,42 @@ export default {
   name: 'tagsList',
   data () {
     return {
-      paddingLeft: 0,
+      items: [
+        {"href": "http://www.lanrentuku.com", "tag": "node"},
+        {"href": "http://www.lanrentuku.com", "tag": "golang"},
+        {"href": "http://www.lanrentuku.com", "tag": "c"},
+        {"href": "http://www.lanrentuku.com", "tag": "c++"},
+        {"href": "http://www.lanrentuku.com", "tag": "python"},
+        {"href": "http://www.lanrentuku.com", "tag": "github"},
+        {"href": "http://www.lanrentuku.com", "tag": "docker"},
+        {"href": "http://www.lanrentuku.com", "tag": "cf"},
+        {"href": "http://www.lanrentuku.com", "tag": "dota"},
+        {"href": "http://www.lanrentuku.com", "tag": "php"},
+        {"href": "http://www.lanrentuku.com", "tag": "althorigm"},
+        {"href": "http://www.lanrentuku.com", "tag": "js"},
+        {"href": "http://www.lanrentuku.com", "tag": "vuejs"},
+        {"href": "http://www.lanrentuku.com", "tag": "memory"},
+        {"href": "http://www.lanrentuku.com", "tag": "dockerfile"},
+        {"href": "http://www.lanrentuku.com", "tag": "design"},
+        {"href": "http://www.lanrentuku.com", "tag": "android"},
+        {"href": "http://www.lanrentuku.com", "tag": "ios"},
+        {"href": "http://www.lanrentuku.com", "tag": "sass"},
+        {"href": "http://www.lanrentuku.com", "tag": "jquery"},
+        {"href": "http://www.lanrentuku.com", "tag": "react"},
+        {"href": "http://www.lanrentuku.com", "tag": "bootstamp"},
+        {"href": "http://www.lanrentuku.com", "tag": "vuejs"},
+        {"href": "http://www.lanrentuku.com", "tag": "java"},
+        {"href": "http://www.lanrentuku.com", "tag": "btree"},
+        {"href": "http://www.lanrentuku.com", "tag": "mysql"},
+        {"href": "http://www.lanrentuku.com", "tag": "mongodb"},
+      ],
     }
   },
   mounted() {
-		this.$nextTick(function() {
-        this.tagscloud()
-		})
-	},
-  // updated() {
 		// this.$nextTick(function() {
-        // this.tagscloud()
+    this.tagscloud()
 		// })
-	// },
+	},
   methods: {
 		tagscloud(event) {
 				tagscloud()
@@ -100,8 +123,4 @@ export default {
       text-align: left;
   }
 }
-//
-// a {
-//   color: #42b983;
-// }
 </style>

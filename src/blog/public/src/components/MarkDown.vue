@@ -1,14 +1,29 @@
 <template>
 <div id='markdown'>
-  <!-- <el-input placeholder="Please input" v-model="input"> </el-input> -->
-  <!-- <input id="title"
-         type="text"
-         placeholder="Title"
-         v-model.trim="title"
-  > -->
-  <el-input placeholder="请输入内容" v-model="input3">
-    <template slot="prepend">Title:</template>
-  </el-input>
+  <el-row :gutter="10">
+    <el-col :span="14">
+      <el-input placeholder="Please Input Title" v-model.trim="title">
+        <template slot="prepend">Title:</template>
+      </el-input>
+    </el-col>
+    <el-col :span="4">
+      <el-input placeholder="Add A Tag" icon="plus" v-model="addtag" @click="addTag">
+      </el-input>
+    </el-col>
+    <el-col :span="6">
+      <el-tag
+        v-for="tag in tags"
+        :closable="true"
+        :type="tag.type"
+        :key="tag"
+        :close-transition="false"
+        @close="removeTag(tag)"
+        style="padding-top:6px; padding-bottom:6px"
+      >
+      {{tag.name}}
+      </el-tag>
+    </el-col>
+  </el-row>
   <textarea id="editor">
   </textarea>
 </div>
@@ -24,8 +39,14 @@ export default {
   name: 'markdown',
   data () {
     return {
-      title: ''
-    }
+      title: '',
+      addtag: '',
+      tags: [
+        { key: 1, name: 'Tag One', type: '' },
+        { key: 2, name: 'Tag Five', type: 'warning' },
+        { key: 3, name: 'Tag Six', type: 'danger' }
+      ]
+    };
   },
   mounted() {
 		this.$nextTick(function() {
@@ -90,6 +111,7 @@ export default {
           },{
             name: "fullscreen",
             action: SimpleMDE.toggleFullScreen,
+            // action: this.toggleFullScreen,
             className: "fa fa-arrows-alt no-disable no-mobile",
             title: "Fullscreen",
           },
@@ -122,6 +144,17 @@ export default {
       this.$store.dispatch('autoSave', simplemde.value())
       // this.title = marked(simplemde.value())
       console.log(marked(simplemde.value()))
+    },
+    toggleFullScreen() {
+      SimpleMDE.toggleFullScreen()
+      console.log("qqq")
+    },
+    addTag(ev) {
+      console.log(ev);
+      this.addtag = ''
+    },
+    removeTag(tag) {
+      this.tags.splice(this.tags.indexOf(tag), 1);
     }
 	}
 }
@@ -132,8 +165,9 @@ export default {
 @import '../assets/css/simplemde.css';
 
 #markdown {
-  margin-left: 250px;
-  padding-right: 10px;
+  /*margin-left: 45px;*/
+  padding: 5px 10px 0px 10px;
+  /*padding-left: 10px;*/
 }
 
 #title {
