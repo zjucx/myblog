@@ -2,6 +2,8 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
+
+	"blog/models"
 )
 
 type ArticleController struct {

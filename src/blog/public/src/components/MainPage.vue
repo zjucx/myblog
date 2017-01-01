@@ -19,9 +19,6 @@ export default {
   name: 'mainPage',
   data () {
     return {
-      style: {
-        width: 0
-      },
       width: 0
     }
   },
@@ -29,10 +26,10 @@ export default {
     articles: Articles
   },
   mounted() {
-		// this.$nextTick(function() {
+		this.$nextTick(function() {
 				window.addEventListener('resize', this.getWindowWidth);
         this.getWindowWidth()
-		// })
+		})
 	},
   methods: {
 		getWindowWidth(event) {

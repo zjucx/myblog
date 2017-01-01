@@ -3,14 +3,18 @@ import Vue from 'vue'
 
 const state = {
   articles: [],
+  title: '',
   article: '',
-  time: '',
+  tags: [],
+  // time: '',
+  comments: [],
   writer: ''
 }
 
 // getters
 const getters = {
-  article: state => state.article
+  article: state => state.article,
+  articles: state => state.articles
 }
 
 const actions =  {
@@ -47,6 +51,9 @@ const actions =  {
 const mutations = {
   [type.SET_ARTICLE] (state, article) {
     state.article = article
+  },
+  [type.SET_ARTICLES] (state, articles) {
+    state.articles = articles
   },
 }
 

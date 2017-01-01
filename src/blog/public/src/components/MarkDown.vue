@@ -1,13 +1,14 @@
 <template>
 <div id='markdown'>
   <!-- <el-input placeholder="Please input" v-model="input"> </el-input> -->
-  <div v-html="artTitle">
-  </div>
-  <input id="artTitle"
+  <!-- <input id="title"
          type="text"
          placeholder="Title"
-         v-model.trim="artTitle"
-  >
+         v-model.trim="title"
+  > -->
+  <el-input placeholder="请输入内容" v-model="input3">
+    <template slot="prepend">Title:</template>
+  </el-input>
   <textarea id="editor">
   </textarea>
 </div>
@@ -23,7 +24,7 @@ export default {
   name: 'markdown',
   data () {
     return {
-      artTitle: ''
+      title: ''
     }
   },
   mounted() {
@@ -109,14 +110,17 @@ export default {
        });
 		})
 	},
+  computed:{
+    ...mapState(['title'])
+  },
   methods: {
 		submit(event) {
-      console.log(this.artTitle)
+      console.log(this.title)
       this.$store.dispatch('saveArticle')
 		},
     autoSave() {
       this.$store.dispatch('autoSave', simplemde.value())
-      // this.artTitle = marked(simplemde.value())
+      // this.title = marked(simplemde.value())
       console.log(marked(simplemde.value()))
     }
 	}
@@ -132,7 +136,7 @@ export default {
   padding-right: 10px;
 }
 
-#artTitle {
+#title {
   transition: all 0.4s;
   width: 100%;
   font-size: 16px;

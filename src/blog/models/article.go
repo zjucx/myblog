@@ -1,12 +1,12 @@
 package models
 
 import (
-  "strings"
+  // "strings"
   "time"
 	"gopkg.in/mgo.v2/bson"
 )
 
-type struct Article {
+type Article struct{
   Id_            bson.ObjectId `bson:"_id"`
 	Author         string
 	Title          string
@@ -17,15 +17,18 @@ type struct Article {
 	Summary        string
 	Views          int
 	Comments       []*Comment
-	CreatedTime    time.Time
-	ModifiedTime   time.Time
+	CreatedTime    string
+	ModifiedTime   string
 }
 
-func (a *Article) CreateArticle() err {
+func (article *Article) CreateArticle() error {
+  timestamp := time.Now().Unix()
+
   article.Id_ = bson.NewObjectId()
+  article.CreatedTime = time.Unix(timestamp, 0).Format("2006-01-02 03:04:05 PM")
   c := DB.C("article")
-  err := c.Insert(a)
-  return err
+  return c.Insert(article)
+  // return err
 }
 
 type Comment struct {
@@ -37,29 +40,27 @@ type Comment struct {
   Text        string
 }
 
-type Category struct {
-	Id_         bson.ObjectId `bson:"_id"`
-	Name        string
-	Title       string
-	Content     string
-	CreatedTime time.Time
-	UpdatedTime time.Time
-	Views       int
-	NodeTime    time.Time
-	Nodes       []Node
-}
-
-func (category *Category) CreatCategory() error {
-	//category.Id_ = bson.NewObjectId()
-	c := DB.C("category")
-	err := c.Insert(category)
-	SetAppCategories()
-	return err
-}
-
-func (category *Category) UpdateCategory() error {
-	c := DB.C("category")
-	err := c.UpdateId(category.Id_, category)
-	SetAppCategories()
-	return err
-}
+// type Category struct {
+// 	Id_         bson.ObjectId `bson:"_id"`
+// 	Name        string
+// 	Title       string
+// 	Content     string
+// 	CreatedTime time.Time
+// 	UpdatedTime time.Time
+// 	Views       int
+// }
+//
+// func (category *Category) CreatCategory() error {
+// 	//category.Id_ = bson.NewObjectId()
+// 	c := DB.C("category")
+// 	err := c.Insert(category)
+// 	SetAppCategories()
+// 	return err
+// }
+//
+// func (category *Category) UpdateCategory() error {
+// 	c := DB.C("category")
+// 	err := c.UpdateId(category.Id_, category)
+// 	SetAppCategories()
+// 	return err
+// }
