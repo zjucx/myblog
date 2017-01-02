@@ -7,10 +7,10 @@
       </el-input>
     </el-col>
     <el-col :span="4">
-      <el-input placeholder="Add A Tag" icon="plus" v-model="addtag" @click="addTag">
+      <el-input placeholder="Add A Tag" icon="plus" v-model="addtag" @click="addTag" v-on:keyup.enter="addTag">
       </el-input>
     </el-col>
-    <el-col :span="6">
+    <el-col :span="6" style="padding-top:5px">
       <el-tag
         v-for="tag in tags"
         :closable="true"
@@ -144,6 +144,7 @@ export default {
     //   // this.title = marked(simplemde.value())
     // },
     addTag(ev) {
+      this.tags.push({key: (this.tags.length+1), name: this.addtag, type: 'danger'})
       this.addtag = ''
     },
     removeTag(tag) {

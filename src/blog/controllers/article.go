@@ -13,9 +13,12 @@ type ArticleController struct {
 }
 
 func (c *ArticleController) Get() {
-	c.Data["Website"] = "beego.me"
-	c.Data["Email"] = "astaxie@gmail.com"
-	c.TplName = "index.html"
+	fmt.Println("-==================")
+	_, articles := models.QueryArticles(5)
+	fmt.Println("-==================")
+	fmt.Println(articles)
+	c.Data["json"] = &articles
+	c.ServeJSON()
 }
 
 func (c *ArticleController) Post() {
@@ -28,6 +31,6 @@ func (c *ArticleController) Post() {
 	} else {
 	  c.Data["json"] = "{\"ObjectId\":\"" + objectid + "\"}"
 	}
-	this.Ctx.Redirect(302, "/admin/index")
+	c.Ctx.Redirect(302, "/admin/index")
   // c.ServeJson()
 }

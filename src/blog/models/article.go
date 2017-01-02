@@ -50,12 +50,14 @@ func InsertArticle(article *Article) (string, error) {
   // return err
 }
 
-func QueryArticles(topN int) (error, *[]SArticle){
+func QueryArticles(topN int) (error, []SArticle){
   //*****查询多条数据*******
-  articles := new([]SArticle)   //存放结果
+  var articles []SArticle   //存放结果
   c := DB.C("article")
+  fmt.Println("-==================1")
   iter := c.Find(nil).Limit(topN).Iter()
   err := iter.All(&articles)
+  fmt.Println("-==================2")
   if err != nil {
       return err, nil
   }
