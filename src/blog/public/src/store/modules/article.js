@@ -33,7 +33,12 @@ const actions =  {
         commit('SET_ARTICLE', response.data)
       })
   },
-  saveArticle: ({state, commit}) => {
+  saveArticle: ({state, commit}, article) => {
+    commit('SET_ARTICLE', article.article)
+    commit('SET_TITLE', article.title)
+    commit('SET_TAGS', article.tags)
+    console.log(state.title)
+    console.log(state.tags)
     return Vue.http.post('/article/saveArticle', state)
       .then(
         ()=>doToast(state, commit, {info: '保存成功,是否返回?', btnNum: 2}),
@@ -41,16 +46,22 @@ const actions =  {
       )
       // .finally(()=>commit('TOASTING_TOGGLE', false))
   },
-  autoSave: ({commit}, article) => {
-    console.log(article)
-    commit('SET_ARTICLE', article)
-  }
+  // autoSave: ({commit}, article) => {
+  //   console.log(article)
+  //   commit('SET_ARTICLE', article)
+  // }
 }
 
 // 相关的 mutations
 const mutations = {
   [type.SET_ARTICLE] (state, article) {
     state.article = article
+  },
+  [type.SET_TITLE] (state, title) {
+    state.title = title
+  },
+  [type.SET_TAGS] (state, tags) {
+    state.tags = tags
   },
   [type.SET_ARTICLES] (state, articles) {
     state.articles = articles

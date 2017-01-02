@@ -18,7 +18,6 @@
         :key="tag"
         :close-transition="false"
         @close="removeTag(tag)"
-        style="padding-top:6px; padding-bottom:6px"
       >
       {{tag.name}}
       </el-tag>
@@ -42,9 +41,9 @@ export default {
       title: '',
       addtag: '',
       tags: [
-        { key: 1, name: 'Tag One', type: '' },
-        { key: 2, name: 'Tag Five', type: 'warning' },
-        { key: 3, name: 'Tag Six', type: 'danger' }
+        { key: 1, name: 'node', type: '' },
+        { key: 2, name: 'vuex', type: 'warning' },
+        { key: 3, name: 'blog', type: 'danger' }
       ]
     };
   },
@@ -124,7 +123,7 @@ export default {
           },
         ],
        });
-       simplemde.codemirror.on("change", this.autoSave);
+      //  simplemde.codemirror.on("change", this.autoSave);
        marked.setOptions({
          highlight: function (code) {
            return highlight.highlightAuto(code).value;
@@ -132,25 +131,19 @@ export default {
        });
 		})
 	},
-  computed:{
-    ...mapState(['title'])
-  },
   methods: {
 		submit(event) {
-      console.log(this.title)
-      this.$store.dispatch('saveArticle')
+      this.$store.dispatch('saveArticle', {
+        "title": this.title,
+        "article": simplemde.value(),
+        "tags": this.tags
+      })
 		},
-    autoSave() {
-      this.$store.dispatch('autoSave', simplemde.value())
-      // this.title = marked(simplemde.value())
-      console.log(marked(simplemde.value()))
-    },
-    toggleFullScreen() {
-      SimpleMDE.toggleFullScreen()
-      console.log("qqq")
-    },
+    // autoSave() {
+    //   this.$store.dispatch('autoSave', simplemde.value())
+    //   // this.title = marked(simplemde.value())
+    // },
     addTag(ev) {
-      console.log(ev);
       this.addtag = ''
     },
     removeTag(tag) {

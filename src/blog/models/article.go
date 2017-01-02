@@ -39,11 +39,14 @@ func InsertArticle(article *Article) (string, error) {
   article.Id = bson.NewObjectId()
   article.CreatedTime = time.Unix(timestamp, 0).Format("2006-01-02 03:04:05 PM")
   article.Summary = generateSum(article.Text)
+  fmt.Println("article.Title: " + article.Title)
+
   if article.Text == "" || article.Title == "" {
     return "", nil
   }
   c := DB.C("article")
-  return article.Id.String(), c.Insert(article)
+  err := c.Insert(article)
+  return "", err
   // return err
 }
 

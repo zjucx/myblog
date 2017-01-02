@@ -13,19 +13,18 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue',
+        loader: 'vue-loader',
         options: {
           // vue-loader options go here
           sass: ExtractTextPlugin.extract({
-            loader: 'css!sass!',
+            loader: 'css-loader!sass-loader!',
             fallbackLoader: 'vue-style-loader'
           })
         }
       },
       {
         test: /\.js$/,
-        loader: 'babel',
-        // loader: 'babel-loader',
+        loader: 'babel-loader',
         exclude: /node_modules/
       },
       {
@@ -38,7 +37,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file',
+        loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]'
         }

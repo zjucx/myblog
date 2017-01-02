@@ -4,8 +4,8 @@ import (
   // "strings"
   // "fmt"
   "errors"
-  "time"
-	"gopkg.in/mgo.v2/bson"
+  // "time"
+	// "gopkg.in/mgo.v2/bson"
 )
 
 type Tag struct {
@@ -18,9 +18,9 @@ func InsertTag(id string, comment *Comment) error {
     return errors.New("Comment text is null!")
   }
   //db.person.update({"name":"ryan"},{"$push":{"language":"english"}},true,true);//给数组的末尾添加一个值。
-  c := DB.C("tags")
-  err := c.Update(bson.M{"_id": objectId}, bson.M{"$push":bson.M{"comments":comment}})
-  return err
+  // c := DB.C("tags")
+  // err := c.Update(bson.M{"_id": objectId}, bson.M{"$push":bson.M{"comments":comment}})
+  return nil
   // return err
 }
 
