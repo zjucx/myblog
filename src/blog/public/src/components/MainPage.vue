@@ -3,12 +3,8 @@
 <!-- Page Layout here -->
 <div class="mainpage">
   <div v-bind:style="style">
-
   <!-- Grey navigation panel -->
-  <div v-for="(o, index) in 2">
-    <articles></articles>
-    <articles></articles>
-  </div>
+  <articles></articles>
   </div>
 </div>
 </template>
@@ -33,15 +29,12 @@ export default {
 	},
   methods: {
 		getWindowWidth(event) {
-				console.log(document.documentElement.clientWidth)
 				this.width = document.documentElement.clientWidth;
 		}
 	},
   computed: {
 		style() {
-      console.log(this.width)
       this.width = this.width - 345
-      console.log(this.width)
 			return {
         'width': this.width + 'px',
       }

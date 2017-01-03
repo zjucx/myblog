@@ -3,28 +3,6 @@
   <div class="powerby" >Tags Cloud :</div>
   <div id="tagsclound">
     <a v-for="item of items" :href="item.href" target="_blank">{{ item.tag }}</a>
-    <!-- <a href="http://www.lanrentuku.com" target="_blank">golang</a>
-    <a href="http://www.lanrentuku.com" target="_blank">c++</a>
-    <a href="http://www.lanrentuku.com" target="_blank">python</a>
-    <a href="http://www.lanrentuku.com" target="_blank">github</a>
-    <a href="http://www.lanrentuku.com" target="_blank">docker</a>
-    <a href="http://www.lanrentuku.com" target="_blank">java</a>
-    <a href="http://www.lanrentuku.com" target="_blank">php</a>
-    <a href="http://www.lanrentuku.com" target="_blank">althorigm</a>
-    <a href="http://www.lanrentuku.com" target="_blank">cloudfoundry</a>
-    <a href="http://www.lanrentuku.com" target="_blank">android</a>
-    <a href="http://www.lanrentuku.com" target="_blank">ios</a>
-    <a href="http://www.lanrentuku.com" target="_blank">memory</a>
-    <a href="http://www.lanrentuku.com" target="_blank">mongodb</a>
-    <a href="http://www.lanrentuku.com" target="_blank">vuejs</a>
-    <a href="http://www.lanrentuku.com" target="_blank">webpack</a>
-    <a href="http://www.lanrentuku.com" target="_blank">sass</a>
-    <a href="http://www.lanrentuku.com" target="_blank">react</a>
-    <a href="http://www.lanrentuku.com" target="_blank">jquery</a>
-    <a href="http://www.lanrentuku.com" target="_blank">javascript</a>
-    <a href="http://www.lanrentuku.com" target="_blank">dota</a>
-    <a href="http://www.lanrentuku.com" target="_blank">dockerfile</a>
-    <a href="http://www.lanrentuku.com" target="_blank">design</a> -->
   </div>
 </div>
 </template>
@@ -68,15 +46,8 @@ export default {
     }
   },
   mounted() {
-		// this.$nextTick(function() {
-    this.tagscloud()
-		// })
-	},
-  methods: {
-		tagscloud(event) {
-				tagscloud()
-		}
-	},
+		tagscloud()
+	}
 }
 </script>
 

@@ -1,5 +1,6 @@
 <template>
 <div class='article-cx'>
+  <div  v-for="item in articles">
   <!-- Page Layout here -->
   <div class="powerby" >Trending on Google+</div>
   <!-- <el-row>
@@ -18,11 +19,13 @@
         </div>
         <!-- <center> -->
         <div class="content">
+          <h2>{{item.title}}</h2>
           <img src="../assets/logo.png" class="image">
+          <div v-html="content(item.summary)"></div>
+            <!-- {{ content(item.summary) }} -->
         </div>
         <!-- </center> -->
         <div>
-          <span>Yummy hamburger jjjjjjjjjjjj  aofeijf   afjejfe af wea f aeiwo jioaiegegeegawgawga  aewfawfawehfiaeofewfwe</span>
           <div class="bottom clearfix">
             <el-row :gutter="20">
               <el-col :span="2">
@@ -37,20 +40,20 @@
                 </div>
                 <div style="padding-left:40px; padding-top:8px;font-size: 12px;">32</div>
               </el-col>
-              <el-col :span="2">
+              <el-col :span="2" :offset="2">
                 <div class="cx-circle">
                   <i class="fa fa-thumbs-up cx-fa" aria-hidden="true"></i>
                 </div>
                 <div style="padding-left:40px; padding-top:8px;font-size: 12px;">32</div>
               </el-col>
-              <el-col :span="14" :offset="1">
+              <el-col :span="14" :offset="2">
                 <!-- <time class="time">{{ currentDate }}</time> -->
-                <div>
+                <!-- <div> -->
                 <i class="fa fa-tags cx-fa" aria-hidden="true">:</i>
-                <el-tag>Tag One</el-tag>
-                <el-tag type="gray">Tag Two</el-tag>
-                <el-tag type="primary">Tag Three</el-tag>
-                <div>
+                <el-tag v-for="tag in item.tags">{{tag.name}}</el-tag>
+                <!-- <el-tag type="gray">Tag Two</el-tag>
+                <el-tag type="primary">Tag Three</el-tag> -->
+                <!-- <div> -->
               </el-col>
             </el-row>
           </div>
@@ -59,17 +62,30 @@
        <!-- </el-card> -->
     <!-- </el-col>
   </el-row> -->
-
+</div>
 </div>
 </template>
 
 <script>
+import {mapState, mapActions, mapMutations} from 'vuex'
+import marked from 'marked'
+
 export default {
   name: 'Articles',
   data () {
     return {
-      currentDate: new Date(),
-      msg: 'Welcome to Your Vue.js App'
+  //     currentDate: new Date(),
+  //     msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  computed: {
+    ...mapState({
+      articles: state => state.article.articles,
+    }),
+  },
+  methods: {
+    content: function (mdstr) {
+      return marked(mdstr)
     }
   }
 }
@@ -104,7 +120,7 @@ export default {
   }
 
   .content {
-    padding-top: 50px;
+    padding-left: 20px;
   }
 
   .bottom {
@@ -149,9 +165,6 @@ export default {
     width: 24px;
     border-radius:50%;
     position: absolute;;
-    /*padding: auto auto;*/
-    /*text-align:center;*/
-    /*border-bottom-right-radius:50%;*/
   }
 
   .cx-circle:hover {

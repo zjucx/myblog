@@ -26,6 +26,9 @@ export default {
     // navbar: NavBar,
     mainPage: MainPage,
     tagsList: TagsList,
+  },
+  mounted() {
+    this.$store.dispatch('getArticles')
   }
 
 }
