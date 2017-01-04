@@ -77,7 +77,7 @@ export default {
       font-size: 12px;
       // font-weight:bold;
       padding:2px 4px;
-
+      color: #42b983;  
       &:hover {
         border:1px solid #fff;
         background:#fff;
