@@ -21,7 +21,7 @@
         <div class="content">
           <h2 style="cursor:pointer;">{{item.title}}</a></h2>
           <img src="../assets/logo.png" class="image">
-          <div v-html="content(item.summary)"></div>
+          <div v-html="content(item.title)"></div>
             <!-- {{ content(item.summary) }} -->
         </div>
         <!-- </center> -->
