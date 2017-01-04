@@ -10,14 +10,14 @@
 <script>
 // import NavBar from './NavBar.vue'
 import MarkDown from './MarkDown.vue'
-import ArticleList from './ArticleList.vue'
+// import ArticleList from './ArticleList.vue'
 // import PicBar from './articleList.vue'
 export default {
   name: 'editPage',
   components: {
     // navbar: NavBar,
     markDown: MarkDown,
-    articleList: ArticleList
+    // articleList: ArticleList
   }
 
 }

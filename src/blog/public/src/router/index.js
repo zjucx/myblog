@@ -3,17 +3,18 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+import ArticlesPage from '../components/ArticlesPage.vue'
+import ArticlePage from '../components/ArticlePage.vue'
 import EditPage from '../components/EditPage.vue'
 import Login from '../components/Login.vue'
-import App from '../App.vue'
 
 // Vue.use(VueRouter)
 
 // const routes = [
-//   { path: '/', component: App },
+//   { path: '/', component: ArticlesPage },
 //   { path: '/publish', component: Publish },
 //   { path: '/login', component: Login },
-//   // '/': App,
+//   // '/': ArticlesPage,
 //   // '/publish': Publish,
 //   // '/login': Login
 // ]
@@ -29,18 +30,20 @@ import App from '../App.vue'
 export default new Router({
   // mode: 'history',
   routes: [
-    {path: '/', component: App},
+    {path: '/', component: ArticlesPage},
     {path: '/edit', component: EditPage},
     {path: '/login', component: Login},
+    {path: '/article', component: ArticlePage},
+    {path: '/articles', component: ArticlesPage},
     {
       path: '/console',
-      component: App,
+      component: ArticlesPage,
       children: [
-        {path: '', component: App},
-        {path: 'articles', name: 'articles', component: App},
-        {path: 'editor', name: 'editor', component: App},
-        {path: 'links', name: 'links', component: App},
-        {path: 'account', name: 'account', component: App}
+        {path: '', component: ArticlesPage},
+        {path: 'articles', name: 'articles', component: ArticlesPage},
+        {path: 'editor', name: 'editor', component: ArticlesPage},
+        {path: 'links', name: 'links', component: ArticlesPage},
+        {path: 'account', name: 'account', component: ArticlesPage}
       ]
     }
   ]

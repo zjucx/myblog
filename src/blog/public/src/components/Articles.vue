@@ -1,6 +1,6 @@
 <template>
-<div class='article-cx'>
-  <div  v-for="item in articles">
+<div>
+  <div  class='article' v-for="item in articles">
   <!-- Page Layout here -->
   <div class="powerby" >Trending on Google+</div>
   <!-- <el-row>
@@ -19,7 +19,7 @@
         </div>
         <!-- <center> -->
         <div class="content">
-          <h2>{{item.title}}</h2>
+          <h2 style="cursor:pointer;">{{item.title}}</a></h2>
           <img src="../assets/logo.png" class="image">
           <div v-html="content(item.summary)"></div>
             <!-- {{ content(item.summary) }} -->
@@ -40,13 +40,13 @@
                 </div>
                 <div style="padding-left:40px; padding-top:8px;font-size: 12px;">32</div>
               </el-col>
-              <el-col :span="2" :offset="2">
+              <el-col :span="2" :offset="1">
                 <div class="cx-circle">
                   <i class="fa fa-thumbs-up cx-fa" aria-hidden="true"></i>
                 </div>
                 <div style="padding-left:40px; padding-top:8px;font-size: 12px;">32</div>
               </el-col>
-              <el-col :span="14" :offset="2">
+              <el-col :span="14" :offset="1">
                 <!-- <time class="time">{{ currentDate }}</time> -->
                 <!-- <div> -->
                 <i class="fa fa-tags cx-fa" aria-hidden="true">:</i>
@@ -74,6 +74,7 @@ export default {
   name: 'Articles',
   data () {
     return {
+      isArticle: false
   //     currentDate: new Date(),
   //     msg: 'Welcome to Your Vue.js App'
     }
@@ -86,6 +87,11 @@ export default {
   methods: {
     content: function (mdstr) {
       return marked(mdstr)
+    },
+    loadArticle: function (id) {
+      console.log("loadArticle")
+      this.$store.dispatch('getArticles', id)
+      this.$emit('loadArticle')
     }
   }
 }
@@ -94,7 +100,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.article-cx{
+.article{
   /*margin: 0 auto;*/
   /*text-align: left;*/
   width: 90%;

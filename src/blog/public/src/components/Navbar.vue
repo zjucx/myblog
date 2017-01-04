@@ -52,6 +52,7 @@ export default {
     font-size: 16px;
     line-height: 25px;
     text-align: center;
+    color: #42b983;
 }
 .dropdown {
     /*padding-top: 20px;*/
