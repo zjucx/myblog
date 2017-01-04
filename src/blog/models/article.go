@@ -64,15 +64,15 @@ func QueryArticles(topN int) (error, []SArticle){
   return nil, articles
 }
 
-func QueryArticleById(id string) (error, *Article){
+func QueryArticleById(id string) (error, Article){
   // id := "5204af979955496907000001"
   objectId := bson.ObjectIdHex(id)
-  article := new(Article)
+  var article Article
   c := DB.C("article")
   err := c.Find(bson.M{"_id": objectId}).One(&article)
   fmt.Println(article)
   if err != nil {
-      return err, nil
+      return err, article
   }
   return nil, article
 }

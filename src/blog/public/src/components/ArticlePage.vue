@@ -28,7 +28,7 @@ export default {
 				window.addEventListener('resize', this.getWindowWidth);
         this.getWindowWidth()
 		// })
-    this.$store.dispatch('getArticle')
+    // this.$store.dispatch('getArticle')
 	},
   methods: {
 		getWindowWidth(event) {

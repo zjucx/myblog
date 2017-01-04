@@ -3,7 +3,7 @@
   <!-- Page Layout here -->
   <div class="powerby" >Trending on Google+</div>
       <div style="padding:14px;">
-        <article>
+        <article style="padding: 20px 0 10px 30px;">
           <h2>{{article.title}}</h2>
           <div v-html="content(article.article)"></div>
         </article>

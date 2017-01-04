@@ -61,6 +61,7 @@ export default {
   left: 45px;
   top: 0;
   height: 100%;
+  border-right: 2px solid #fff;
   // text-align: center;
   #tagsclound {
     height:300px;
@@ -77,7 +78,7 @@ export default {
       font-size: 12px;
       // font-weight:bold;
       padding:2px 4px;
-      color: #42b983;  
+      color: #42b983;
       &:hover {
         border:1px solid #fff;
         background:#fff;

@@ -27,7 +27,7 @@ export default {
 #publish {
   color: #2c3e50;
   /*margin-top: 60px;*/
-  /*padding-left: 45px;*/
+  padding-left: 45px;
   /*overflow-y: hidden;*/
 }
 </style>

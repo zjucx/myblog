@@ -19,9 +19,9 @@
         </div>
         <!-- <center> -->
         <div class="content">
-          <h2 style="cursor:pointer;">{{item.title}}</a></h2>
-          <img src="../assets/logo.png" class="image">
-          <div v-html="content(item.title)"></div>
+          <h2 style="cursor:pointer;" v-on:click="loadArticle(item.Id)"><a href="/#/article">{{item.title}}</a></h2>
+          <!-- <img src="../assets/logo.png" class="image"> -->
+          <div v-html="content(item.summary)"></div>
             <!-- {{ content(item.summary) }} -->
         </div>
         <!-- </center> -->
@@ -89,9 +89,8 @@ export default {
       return marked(mdstr)
     },
     loadArticle: function (id) {
-      console.log("loadArticle")
-      this.$store.dispatch('getArticles', id)
-      this.$emit('loadArticle')
+      console.log("loadArticle" + id)
+      this.$store.dispatch('getArticle', id)
     }
   }
 }
@@ -106,7 +105,6 @@ export default {
   width: 90%;
   /*text-align: center;*/
   border-bottom: 2px solid #fff;
-  border-left: 2px solid #fff;
 }
 .powerby {
     color: #616161;
@@ -126,7 +124,7 @@ export default {
   }
 
   .content {
-    padding-left: 20px;
+    padding: 20px 0 10px 30px;
   }
 
   .bottom {

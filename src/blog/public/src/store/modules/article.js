@@ -2,9 +2,9 @@ import * as type from '../mutation-types'
 import Vue from 'vue'
 
 const state = {
-  articles: [{"title":"","tags":[],"summary":""}],
+  articles: [{"title":"aa","tags":[],"summary":""}],
   title: '',
-  article: {"title":"","tags":[],"article":""},
+  article: {"title":"aaa","tags":[],"article":"aaa"},
   tags: [],
   // time: '',
   comments: [],
@@ -26,10 +26,10 @@ const actions =  {
       })
   },
   getArticle: ({commit}, id) => {
-    return Vue.http.get('/article/getArticle', {param: {id}})
+    return Vue.http.get('/article/getArticle/'+id)
       .then(response=> {
         // stopLoading(commit, start)
-        commit('SET_ARTICLES', response.data)
+        commit('SET_ARTICLE', response.data)
       })
   },
   saveArticle: ({state, commit}, article) => {

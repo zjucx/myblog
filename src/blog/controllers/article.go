@@ -34,3 +34,20 @@ func (c *ArticleController) Post() {
 	c.Ctx.Redirect(302, "/admin/index")
   // c.ServeJson()
 }
+
+func (c *ArticleController) GetArticles() {
+	_, articles := models.QueryArticles(5)
+	fmt.Println(articles)
+	c.Data["json"] = &articles
+	c.ServeJSON()
+}
+
+func (c *ArticleController) GetArticle() {
+	fmt.Println("-==================")
+	id := c.Ctx.Input.Param(":id")
+	_, article := models.QueryArticleById(id)
+	fmt.Println("-==================")
+	fmt.Println(article)
+	c.Data["json"] = &article
+	c.ServeJSON()
+}
