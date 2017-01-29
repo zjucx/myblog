@@ -1,12 +1,12 @@
 <template>
 <div id='markdown'>
   <el-row :gutter="10">
-    <el-col :span="14">
-      <el-input placeholder="Please Input Title" v-model.trim="title">
+    <el-col :span="14" :offset="4">
+      <el-input v-model.trim="title">
         <template slot="prepend">Title:</template>
       </el-input>
     </el-col>
-    <el-col :span="4">
+    <!-- <el-col :span="4">
       <el-input placeholder="Add A Tag" icon="plus" v-model="addtag" @click="addTag" v-on:keyup.enter="addTag">
       </el-input>
     </el-col>
@@ -21,7 +21,7 @@
       >
       {{tag.name}}
       </el-tag>
-    </el-col>
+    </el-col> -->
   </el-row>
   <textarea id="editor">
   </textarea>
@@ -162,18 +162,5 @@ export default {
   /*margin-left: 45px;*/
   padding: 5px 10px 0px 10px;
   /*padding-left: 10px;*/
-}
-
-#title {
-  transition: all 0.4s;
-  width: 100%;
-  font-size: 16px;
-  height:20px;
-  padding: 8px;
-  border: 0px;
-  text-align: center;
-  outline: none;
-  border-bottom: 1px solid $green1;
-  background-color: #eeeeee;
 }
 </style>

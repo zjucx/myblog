@@ -1,8 +1,8 @@
 <template>
 <div>
-  <div  class='article' v-for="item in articles">
+  <div class='article' v-for="item in articles">
   <!-- Page Layout here -->
-  <div class="powerby" >Trending on Google+</div>
+  <div class="powerby" >Trending on ZjuCx</div>
   <!-- <el-row>
     <el-col> -->
       <!-- <el-card :body-style="{ padding: '14px' }"> -->
@@ -106,6 +106,7 @@ export default {
   /*text-align: center;*/
   border-bottom: 2px solid #fff;
 }
+
 .powerby {
     color: #616161;
     font-size: 12px;
@@ -115,69 +116,69 @@ export default {
     text-align: left;
 }
 .time {
-    font-size: 13px;
-    color: #999;
-  }
+  font-size: 13px;
+  color: #999;
+}
 
-  .header {
-    display: block;
-  }
+.header {
+  display: block;
+}
 
-  .content {
-    padding: 20px 0 10px 30px;
-  }
+.content {
+  padding: 20px 0 10px 30px;
+}
 
-  .bottom {
-    margin-top: 13px;
-    line-height: 12px;
-  }
+.bottom {
+  margin-top: 13px;
+  line-height: 12px;
+}
 
-  .button {
-    padding: 0;
-    float: right;
-  }
+.button {
+  padding: 0;
+  float: right;
+}
 
-  .image {
-    width: 200px;
-    display: block;
-    padding-left: 100px;
-  }
+.image {
+  width: 200px;
+  display: block;
+  padding-left: 100px;
+}
 
-  .clearfix:before,
-  .clearfix:after {
-      display: table;
-      content: "";
-  }
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
 
-  .clearfix:after {
-      clear: both
-  }
+.clearfix:after {
+    clear: both
+}
 
-  .cx-header {
-    background: #fff;
-    display: block;
-    height: 36px;
-    width: 36px;
-    border-radius:50%;
-    position: absolute;;
-  }
+.cx-header {
+  background: #fff;
+  display: block;
+  height: 36px;
+  width: 36px;
+  border-radius:50%;
+  position: absolute;;
+}
 
-  .cx-circle {
-    background: #fff;
-    display: block;
-    height: 24px;
-    width: 24px;
-    border-radius:50%;
-    position: absolute;;
-  }
+.cx-circle {
+  background: #fff;
+  display: block;
+  height: 24px;
+  width: 24px;
+  border-radius:50%;
+  position: absolute;;
+}
 
-  .cx-circle:hover {
-    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
-  }
+.cx-circle:hover {
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+}
 
-  .cx-fa {
-    padding-top: 4px;
-    padding-left: 4px;
-  }
+.cx-fa {
+  padding-top: 4px;
+  padding-left: 4px;
+}
 
 </style>
