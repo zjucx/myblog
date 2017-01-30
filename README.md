@@ -46,9 +46,9 @@ git pull
 ```
 
 ### Demo show
-![](src/blog/static/img/publish.png)
+![](src/blog/static/img/main.png)
 #### [Front-End](src/blog/public/README.md)
-![](src/blog/static/img/frontend.png)
+![](src/blog/static/img/publish.png)
 #### [Back-End](src/blog/README.md)
 ![](src/blog/static/img/backend.png)
 
