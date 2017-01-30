@@ -1,4 +1,4 @@
-# public
+Personal Blog using BeeGo and VueJS（二）
 
 > A blog project
 

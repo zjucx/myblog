@@ -10,5 +10,4 @@ func init() {
 		beego.Router("article/saveArticle", &controllers.ArticleController{})
 		beego.Router("article/getArticle/:id", &controllers.ArticleController{}, "get:GetArticle")
 		beego.Router("article/getArticles", &controllers.ArticleController{}, "get:GetArticles")
-
 }
